@@ -1,11 +1,17 @@
 import Head from "next/head";
+import { useState } from "react";
 import Comments from "../components/Comments";
 import NewCommentForm from "../components/NewCommentForm";
 
 import { Data } from "../Data";
 
 export default function Home() {
-    const { currentUser, comments } = Data;
+    const { currentUser } = Data;
+    const [comments, setComments] = useState(Data.comments || []);
+
+    const newCommentHandler = (newComment) => {
+        setComments([...comments, newComment]);
+    };
 
     return (
         <div className="bg-indigo-50 min-h-screen">
@@ -28,7 +34,10 @@ export default function Home() {
                 ))}
 
                 <div className="mt-4 bg-white p-4 md:p-6 lg:p-8 rounded-xl shadow-sm">
-                    <NewCommentForm />
+                    <NewCommentForm
+                        currentUser={currentUser}
+                        onSubmit={newCommentHandler}
+                    />
                 </div>
             </div>
         </div>

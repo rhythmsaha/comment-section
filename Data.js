@@ -2,7 +2,7 @@ export const Data = {
     currentUser: {
         image: {
             png: "./images/avatars/image-juliusomo.png",
-            webp: "./images/avatars/image-juliusomo.webp",
+            webp: "/images/avatars/image-juliusomo.webp",
         },
         username: "juliusomo",
     },

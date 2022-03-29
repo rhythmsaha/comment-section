@@ -1,7 +1,27 @@
 import React from "react";
 import Image from "next/image";
 
-const Actions = () => {
+const Actions = ({ currentUser, toggleReply, com }) => {
+    if (currentUser.username !== com.user?.username) {
+        return (
+            <div className="flex items-center space-x-4 cursor-pointer">
+                <div className="flex items-center space-x-1">
+                    <Image
+                        src="/images/icon-reply.svg"
+                        alt="reply"
+                        height={12}
+                        width={14}
+                    />
+                    <span
+                        className="text-indigo-500 font-semibold text-sm"
+                        onClick={toggleReply}
+                    >
+                        Reply
+                    </span>
+                </div>
+            </div>
+        );
+    }
     return (
         <div className="flex items-center space-x-4">
             <button className="space-x-1 flex items-center">
