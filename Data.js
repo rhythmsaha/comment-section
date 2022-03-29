@@ -6,6 +6,7 @@ export const Data = {
         },
         username: "juliusomo",
     },
+
     comments: [
         {
             id: 1,
@@ -15,13 +16,14 @@ export const Data = {
             score: 12,
             user: {
                 image: {
-                    png: "./images/avatars/image-amyrobson.png",
-                    webp: "./images/avatars/image-amyrobson.webp",
+                    png: "/images/avatars/image-amyrobson.png",
+                    webp: "/images/avatars/image-amyrobson.webp",
                 },
                 username: "amyrobson",
             },
             replies: [],
         },
+
         {
             id: 2,
             content:
@@ -30,8 +32,8 @@ export const Data = {
             score: 5,
             user: {
                 image: {
-                    png: "./images/avatars/image-maxblagun.png",
-                    webp: "./images/avatars/image-maxblagun.webp",
+                    png: "/images/avatars/image-maxblagun.png",
+                    webp: "/images/avatars/image-maxblagun.webp",
                 },
                 username: "maxblagun",
             },
@@ -45,8 +47,8 @@ export const Data = {
                     replyingTo: "maxblagun",
                     user: {
                         image: {
-                            png: "./images/avatars/image-ramsesmiron.png",
-                            webp: "./images/avatars/image-ramsesmiron.webp",
+                            png: "/images/avatars/image-ramsesmiron.png",
+                            webp: "/images/avatars/image-ramsesmiron.webp",
                         },
                         username: "ramsesmiron",
                     },
@@ -60,8 +62,8 @@ export const Data = {
                     replyingTo: "ramsesmiron",
                     user: {
                         image: {
-                            png: "./images/avatars/image-juliusomo.png",
-                            webp: "./images/avatars/image-juliusomo.webp",
+                            png: "/images/avatars/image-juliusomo.png",
+                            webp: "/images/avatars/image-juliusomo.webp",
                         },
                         username: "juliusomo",
                     },

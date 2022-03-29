@@ -4,7 +4,7 @@ import Image from "next/image";
 const Actions = () => {
     return (
         <div className="flex items-center space-x-4">
-            <span className="space-x-1 flex items-center">
+            <button className="space-x-1 flex items-center">
                 <Image
                     src={"/images/icon-delete.svg"}
                     alt="deleteIcon"
@@ -14,8 +14,9 @@ const Actions = () => {
                 <span className="text-sm font-semibold text-red-400">
                     Delete
                 </span>
-            </span>
-            <span className="space-x-1 flex items-center">
+            </button>
+
+            <button className="space-x-1 flex items-center">
                 <Image
                     src={"/images/icon-edit.svg"}
                     alt="deleteIcon"
@@ -25,7 +26,7 @@ const Actions = () => {
                 <span className="text-sm font-semibold text-indigo-700">
                     Edit
                 </span>
-            </span>
+            </button>
         </div>
     );
 };

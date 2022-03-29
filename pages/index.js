@@ -1,15 +1,14 @@
 import Head from "next/head";
-import Image from "next/image";
 import Comments from "../components/Comments";
+import NewCommentForm from "../components/NewCommentForm";
 
 import { Data } from "../Data";
 
 export default function Home() {
     const { currentUser, comments } = Data;
-    console.log(comments);
 
     return (
-        <div className="bg-blue-50 min-h-screen">
+        <div className="bg-indigo-50 min-h-screen">
             <Head>
                 <title>Create Next App</title>
                 <meta
@@ -19,10 +18,18 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className="w-11/12 mx-auto max-w-3xl pt-10 space-y-4">
-                {comments.map((com) => (
-                    <Comments key={com.id} />
+            <div className="w-11/12 mx-auto max-w-3xl py-10 space-y-4">
+                {comments.map((comment) => (
+                    <Comments
+                        key={comment.id}
+                        com={comment}
+                        currentUser={currentUser}
+                    />
                 ))}
+
+                <div className="mt-4 bg-white p-4 md:p-6 lg:p-8 rounded-xl shadow-sm">
+                    <NewCommentForm />
+                </div>
             </div>
         </div>
     );
