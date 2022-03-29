@@ -6,9 +6,14 @@ import Vote from "./Vote";
 
 const CommentCard = ({ com, currentUser, onReply }) => {
     const [replyMode, setReplyMode] = useState(false);
+    const [editMode, setEditMode] = useState(false);
 
     const replyToggleHandler = () => {
         setReplyMode((prev) => !prev);
+    };
+
+    const toggleEditHandler = () => {
+        setEditMode((prev) => !prev);
     };
 
     return (
