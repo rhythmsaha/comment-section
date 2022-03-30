@@ -1,7 +1,18 @@
 import React from "react";
 import Image from "next/image";
 
-const Actions = ({ currentUser, toggleReply, com }) => {
+const Actions = ({
+    currentUser,
+    toggleReply,
+    com,
+    onEdit,
+    onDelete,
+    editMode,
+}) => {
+    const deleteCommentHandler = () => {
+        onDelete(com.id);
+    };
+
     if (currentUser.username !== com.user?.username) {
         return (
             <div className="flex items-center space-x-4 cursor-pointer">
@@ -24,7 +35,10 @@ const Actions = ({ currentUser, toggleReply, com }) => {
     }
     return (
         <div className="flex items-center space-x-4">
-            <button className="space-x-1 flex items-center">
+            <button
+                className="space-x-1 flex items-center"
+                onClick={deleteCommentHandler}
+            >
                 <Image
                     src={"/images/icon-delete.svg"}
                     alt="deleteIcon"
@@ -36,7 +50,7 @@ const Actions = ({ currentUser, toggleReply, com }) => {
                 </span>
             </button>
 
-            <button className="space-x-1 flex items-center">
+            <button className="space-x-1 flex items-center" onClick={onEdit}>
                 <Image
                     src={"/images/icon-edit.svg"}
                     alt="deleteIcon"
@@ -44,7 +58,8 @@ const Actions = ({ currentUser, toggleReply, com }) => {
                     width={10}
                 />
                 <span className="text-sm font-semibold text-indigo-700">
-                    Edit
+                    {!editMode && "Edit"}
+                    {editMode && "Cancel"}
                 </span>
             </button>
         </div>

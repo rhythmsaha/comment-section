@@ -14,6 +14,8 @@ function NewCommentForm({
     const newCommentHandler = (event) => {
         event.preventDefault();
 
+        if (input === "") return;
+
         if (!isReply) {
             onSubmit({
                 id: Math.random().toString(),
@@ -40,8 +42,20 @@ function NewCommentForm({
     };
 
     return (
-        <form onSubmit={newCommentHandler}>
-            <div>
+        <form
+            onSubmit={newCommentHandler}
+            className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4"
+        >
+            <div className="hidden lg:block">
+                <Image
+                    src={currentUser?.image?.webp}
+                    alt={currentUser.username}
+                    height={30}
+                    width={30}
+                />
+            </div>
+
+            <div className="w-full">
                 <textarea
                     rows="3"
                     placeholder="Add a comment..."
@@ -51,7 +65,11 @@ function NewCommentForm({
                 ></textarea>
             </div>
 
-            <div className="mt-4 flex justify-between items-center">
+            <div className="hidden lg:block">
+                <Button type="submit">SEND</Button>
+            </div>
+
+            <div className=" flex justify-between items-center lg:hidden">
                 <Image
                     src={currentUser?.image?.webp}
                     alt={currentUser.username}
